@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:waClone/models/chat.dart';
+import 'package:waClone/screens/select_contact.dart';
 import 'package:waClone/widgets/chatlist_tile.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -25,7 +26,9 @@ class ChatScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton:  FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => SelectContact()));
+        },
         child: Icon(Icons.chat),
         backgroundColor: Color(0xFF00CC3F),
       ),
