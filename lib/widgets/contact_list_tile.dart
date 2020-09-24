@@ -12,6 +12,7 @@ class ContactListTile extends StatelessWidget {
         return ListTile(
           onTap: () {},
           leading: CircleAvatar(
+            backgroundColor: Colors.grey,
             backgroundImage: NetworkImage(listContact[index].avatar),
           ),
           title: Text(

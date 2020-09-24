@@ -45,6 +45,7 @@ class SelectContact extends StatelessWidget {
             onPressed: () {},
           ),
           PopupMenuButton(
+            padding: EdgeInsets.all(0),
             tooltip: 'More options',
             elevation: 20,
             itemBuilder: (context) => menuList.map((menu) => PopupMenuItem(

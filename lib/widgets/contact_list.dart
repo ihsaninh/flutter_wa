@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
 
 import 'package:waClone/widgets/contact_list_tile.dart';
 
@@ -44,13 +45,13 @@ class ContactList extends StatelessWidget {
         ),
         ContactListTile(),
         ListTile(
-          onTap: () {},
+          onTap: () => _onShare(context),
           leading: CircleAvatar(
             backgroundColor: Colors.transparent,
             child: Icon(Icons.share, color: Colors.grey),
           ),
           title: Text(
-            'New contact',
+            'Invite friends',
             style: TextStyle(
               fontSize: 17
             ),
@@ -72,4 +73,14 @@ class ContactList extends StatelessWidget {
       ],
     );
   }
+
+  _onShare(BuildContext context) async {
+    final RenderBox box = context.findRenderObject();
+
+    await Share.share('Tes',
+      sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size
+    );
+
+  }
+
 }
